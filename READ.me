@@ -1,0 +1,13 @@
+
+1. Persiapan Kunci Akses (GitHub Personal Access Token / PAT)
+Karena repositori Terraform Anda terpisah dan kemungkinan bersifat privat, repositori aplikasi butuh izin untuk mengintip dan mengunduh kode dari sana.
+a. Buat Personal Access Token (PAT) di akun GitHub Anda (Settings > Developer Settings > Personal Access Tokens). Beri hak akses repo (read/download).
+b. Simpan token tersebut di repositori aplikasi Anda lewat menu Settings > Secrets and Variables > Actions. Beri nama rahasia tersebut, misalnya: MY_GITHUB_TOKEN.
+
+2. Buka Command Prompt, PowerShell, atau Terminal di folder tempat Anda menyimpan file di atas, lalu jalankan perintah berikut secara berurutan:
+a. terraform init or terraform init -upgrade
+Proses: Terraform akan mengunduh plugin provider Kubernetes resmi dari HashiCorp ke laptop Anda.
+b. terraform plan
+Proses: Terraform akan menganalisis klaster Docker Desktop Anda dan menampilkan simulasi: "3 resources to add" (Namespace, Deployment, Service).
+c. terraform apply -auto-approve
+Proses: Terraform mengeksekusi kode dan aplikasi langsung menyala di klaster k8s lokal Anda.

@@ -8,6 +8,9 @@ resource "kind_cluster" "primary" {
   kind_config {
     api_version = "kind.x-k8s.io/v1alpha4"
     kind        = "Cluster"
+    networking {
+      api_server_address = "127.0.0.1"
+    }
 
     node { role = "control-plane" }
     node { role = "worker" }

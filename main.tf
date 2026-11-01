@@ -1,3 +1,6 @@
+
+provider "kind" {}
+
 resource "kind_cluster" "primary" {
   name           = "kind-kluster-multinode"
   wait_for_ready = true
